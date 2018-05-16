@@ -1,0 +1,604 @@
+
+<!-- saved from url=(0051)file:///Users/alexeisevko/Downloads/vvm_script.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <script type="text/javascript" src="file:///Users/alexeisevko/Downloads/memorymanager.js"></script>
+    <script type="text/javascript" src="file:///Users/alexeisevko/Downloads/list.js"></script>
+    <script type="text/javascript" src="file:///Users/alexeisevko/Downloads/graphics.js"></script>
+</head>
+<body>
+    <pre id="log"></pre>
+    <script type="text/javascript">
+        function clearLog() {
+            var log = document.getElementById("log");
+            log.innerHTML = "";
+        }
+        function log(s) {
+            var log = document.getElementById("log");
+            log.innerHTML += s+"\n";
+        }
+    var _vvm_codes = [
+        "nop",
+
+        "xor_value",
+        "and_value",
+        "imp_value",
+        "or_value",
+        "land_value",
+        "lor_value",
+        "xor_boolean",
+        "and_boolean",
+        "imp_boolean",
+        "or_boolean",
+        "land_boolean",
+        "lor_boolean",
+
+        "load_value",
+        "add_value",
+        "sub_value",
+        "mul_value",
+        "div_value",
+        "sign_value",
+        "min_value",
+        "max_value",
+        "conv_boolean_register",
+        "conv_register_boolean",
+        "add_register",
+        "sub_register",
+        "mul_register",
+        "div_register",
+        "sign_register",
+        "min_register",
+        "max_register",
+
+        "add_value_pointer",
+        "sub_value_pointer",
+        "add_register_pointer",
+        "sub_register_pointer",
+        "conv_boolean_pointer",
+        "conv_register_pointer",
+        "conv_pointer_boolean",
+        "conv_pointer_register",
+        "mov",
+        "add_pointer",
+        "sub_pointer",
+        "min_pointer",
+        "max_pointer",
+
+        "reset_roots_pointer",
+
+        "load",
+        "store",
+        "store_value",
+
+        "allocate_value",
+        "deallocate_value",
+        "allocate_register",
+        "deallocate_register",
+
+        "restore",
+        "save",
+
+        "copy",
+
+        "load_value_scalar",
+        "load_scalar",
+        "conv_boolean_scalar",
+        "conv_register_scalar",
+        "conv_pointer_scalar",
+        "conv_scalar_boolean",
+        "conv_scalar_register",
+        "conv_scalar_pointer",
+        "add_scalar",
+        "sub_scalar",
+        "mul_scalar",
+        "div_scalar",
+        "min_scalar",
+        "max_scalar",
+        "sin_scalar",
+        "cos_scalar",
+        "sqrt_scalar",
+        "inverse_scalar",
+
+        "load_value_vector2",
+        "load_vector2",
+        "conv_boolean_vector2",
+        "conv_register_vector2",
+        "conv_pointer_vector2",
+        "conv_scalar_vector2",
+        "conv_vector2_boolean",
+        "conv_vector2_register",
+        "conv_vector2_pointer",
+        "conv_vector2_scalar",
+        "add_vector2",
+        "sub_vector2",
+        "mul_vector2",
+        "div_vector2",
+        "min_vector2",
+        "max_vector2",
+        "sin_vector2",
+        "cos_vector2",
+        "sqrt_vector2",
+        "cycle_vector2",
+        "reverse_vector2",
+        "mul_vector2_scalar",
+        "mul_scalar_vector2",
+        "div_scalar_vector2",
+        "mul_matrix2x2_vector2",
+
+        "load_value_vector3",
+        "load_vector3",
+        "conv_boolean_vector3",
+        "conv_register_vector3",
+        "conv_pointer_vector3",
+        "conv_scalar_vector3",
+        "conv_vector3_boolean",
+        "conv_vector3_register",
+        "conv_vector3_pointer",
+        "conv_vector3_scalar",
+        "add_vector3",
+        "sub_vector3",
+        "mul_vector3",
+        "div_vector3",
+        "min_vector3",
+        "max_vector3",
+        "sin_vector3",
+        "cos_vector3",
+        "sqrt_vector3",
+        "cycle_vector3",
+        "reverse_vector3",
+        "mul_vector3_scalar",
+        "mul_scalar_vector3",
+        "div_scalar_vector3",
+        "mul_matrix3x3_vector3",
+
+        "load_value_vector4",
+        "load_vector4",
+        "conv_boolean_vector4",
+        "conv_register_vector4",
+        "conv_pointer_vector4",
+        "conv_scalar_vector4",
+        "conv_vector4_boolean",
+        "conv_vector4_register",
+        "conv_vector4_pointer",
+        "conv_vector4_scalar",
+        "add_vector4",
+        "sub_vector4",
+        "mul_vector4",
+        "div_vector4",
+        "min_vector4",
+        "max_vector4",
+        "sin_vector4",
+        "cos_vector4",
+        "sqrt_vector4",
+        "cycle_vector4",
+        "reverse_vector4",
+        "mul_vector4_scalar",
+        "mul_scalar_vector4",
+        "div_scalar_vector4",
+        "mul_matrix4x4_vector4",
+
+        "load_value_identity_matrix2x2",
+        "load_value_matrix2x2",
+        "load_matrix2x2",
+        "conv_boolean_matrix2x2",
+        "conv_register_matrix2x2",
+        "conv_pointer_matrix2x2",
+        "conv_scalar_matrix2x2",
+        "conv_vector2_matrix2x2",
+        "conv_vector4_matrix2x2",
+        "conv_matrix2x2_boolean",
+        "conv_matrix2x2_register",
+        "conv_matrix2x2_pointer",
+        "conv_matrix2x2_scalar",
+        "conv_matrix2x2_vector2",
+        "conv_matrix2x2_vector4",
+        "add_matrix2x2",
+        "sub_matrix2x2",
+        "mul_matrix2x2",
+        "div_matrix2x2",
+        "min_matrix2x2",
+        "max_matrix2x2",
+        "sin_matrix2x2",
+        "cos_matrix2x2",
+        "sqrt_matrix2x2",
+        "inverse_matrix2x2",
+        "transpose_matrix2x2",
+        "det_matrix2x2_scalar",
+        "mul_scalar_matrix2x2",
+        "div_scalar_matrix2x2",
+        "trace_matrix2x2_vector2",
+
+        "load_value_identity_matrix3x3",
+        "load_value_matrix3x3",
+        "load_matrix3x3",
+        "conv_boolean_matrix3x3",
+        "conv_register_matrix3x3",
+        "conv_scalar_matrix3x3",
+        "conv_vector3_matrix3x3",
+        "conv_matrix3x3_boolean",
+        "conv_matrix3x3_register",
+        "conv_matrix3x3_scalar",
+        "conv_matrix3x3_vector3",
+        "add_matrix3x3",
+        "sub_matrix3x3",
+        "mul_matrix3x3",
+        "div_matrix3x3",
+        "min_matrix3x3",
+        "max_matrix3x3",
+        "sin_matrix3x3",
+        "cos_matrix3x3",
+        "sqrt_matrix3x3",
+        "inverse_matrix3x3",
+        "transpose_matrix3x3",
+        "det_matrix3x3_scalar",
+        "mul_scalar_matrix3x3",
+        "div_scalar_matrix3x3",
+        "trace_matrix3x3_vector3",
+
+        "load_value_identity_matrix4x4",
+        "load_value_matrix4x4",
+        "load_matrix4x4",
+        "conv_boolean_matrix4x4",
+        "conv_register_matrix4x4",
+        "conv_scalar_matrix4x4",
+        "conv_vector4_matrix4x4",
+        "conv_matrix4x4_boolean",
+        "conv_matrix4x4_register",
+        "conv_matrix4x4_scalar",
+        "conv_matrix4x4_vector4",
+        "add_matrix4x4",
+        "sub_matrix4x4",
+        "mul_matrix4x4",
+        "div_matrix4x4",
+        "min_matrix4x4",
+        "max_matrix4x4",
+        "sin_matrix4x4",
+        "cos_matrix4x4",
+        "sqrt_matrix4x4",
+        "inverse_matrix4x4",
+        "transpose_matrix4x4",
+        "det_matrix4x4_scalar",
+        "mul_scalar_matrix4x4",
+        "div_scalar_matrix4x4",
+        "trace_matrix4x4_vector4",
+
+        "get",
+        "set",
+        "offset",
+        "concat",
+        "split",
+        "pop",
+        "push",
+        "prepush",
+        "commit",
+
+        "memorize",
+        "remember",
+
+        "init",
+        "over",
+        "take",
+        "deinit",
+
+        "getkey",
+
+        "reset_mouse_button_up_left",
+        "reset_mouse_button_up_right",
+        "reset_mouse_button_down_left",
+        "reset_mouse_button_down_right",
+        "reset_mouse_wheel",
+
+        "create",
+        "reset",
+        "wait",
+        "destroy",
+
+        "camera",
+        "look",
+
+        "texture",
+        "paint",
+
+        "mesh",
+        "draw",
+
+        "midi",
+        "play",
+        "stop",
+        
+        "label",
+        "goto",
+
+        "callback"];
+
+    var _vvm_pointer_operations_codes = [
+        "add_value_ip_else",
+        "sub_value_ip_else",
+        "add_value_divergent_ip",
+        "sub_value_divergent_ip",
+        "add_value_convergent_ip",
+        "sub_value_convergent_ip"
+    ]
+
+    var _labels_of_pointer_operations_codes = [
+        "l_a_v_i_e",
+        "l_s_v_i_e",
+        "l_a_v_d_i",
+        "l_s_v_d_i",
+        "l_a_v_c_i",
+        "l_s_v_c_i"
+    ]
+
+    var _vvm_cnames = [];
+    var _vvm_cnames_pointers = [];
+    var _vvm_name_prefix = "_vvm_C";
+    var _vvm_name_pointers_prefix = "_C";
+    var _vvm_code_prefix = "#";
+    function _vvm_M(p) {
+        return p;
+    }
+    function _vvm_P(p) {
+        return p;
+    }
+    function _vvm_R(p) {
+        return p;
+    }
+    function _vvm_B(p) {
+        return p;
+    }
+
+
+    function _vvm_preparator() {
+        _vvm_codes.forEach(_vvm_code => {
+            _vvm_cnames.push({name:_vvm_name_prefix+_vvm_code,code:_vvm_code_prefix+_vvm_code});
+        })
+        if (_vvm_pointer_operations_codes.length == _labels_of_pointer_operations_codes.length) {
+            for(var i = 0; i < _vvm_pointer_operations_codes.length; i++)
+            _vvm_cnames_pointers.push({name:_vvm_name_pointers_prefix+_labels_of_pointer_operations_codes[i],code:_vvm_code_prefix+_vvm_pointer_operations_codes[i]});
+        }
+        console.log(_vvm_cnames_pointers)
+    }
+    function _vvm_generator() {
+        if (this.out === undefined) this.out = "";
+        _vvm_cnames.forEach(_vvm_cname => {
+            eval(""+_vvm_cname.name+" = function(o1,o2) {	this.out += '"+_vvm_cname.code+"'+((o1 === undefined)?'':(' '+o1))+((o2 === undefined)?'':(' '+o2))+';\\n';	return this;}");
+        })
+    }
+    function _vvm_parse(text) {
+        return true;
+    }
+    function _vvm_compile(text) {
+        if (_vvm_parse(text)) eval(text);
+        return this;
+    }
+    _vvm_interface = {
+        "#nop":         "0000000000",
+
+        "#xor_value": 	"1000100006",
+        "#and_value": 	"1000100008",
+        "#imp_value": 	"1000100013",
+        "#or_value": 	"1000100014",
+        "#land_value":  "1000100128",
+        "#lor_value":   "1000100224",
+        "#xor_boolean": "1001100006",
+        "#and_boolean": "1001100008",
+        "#imp_boolean": "1001100013",
+        "#or_boolean":  "1001100014",
+        "#land_boolean": "1001100128",
+        "#lor_boolean": "1001100224",
+
+        "#load_value": "2000200001",
+        "#add_value": "1000200096",
+        "#sub_value": "1000200006",
+        "#mul_value": "1000200008",
+        "#div_value": "1000200013",
+        "#sign_value": "1000200014",
+        "#min_value": "1000200128",
+        "#max_value": "1000200224",
+        "#conv_boolean_register": "1001200010",
+        "#conv_register_boolean": "1002100010",
+        "#add_register": "1002200096",
+        "#sub_register": "1002200006",
+        "#mul_register": "1002200008",
+        "#div_register": "1002200013",
+        "#sign_register": "1002200014",
+        "#min_register": "1002200128",
+        "#max_register": "1002200224",
+
+        "#add_value_pointer": "1000300096",
+        "#sub_value_pointer": "1000300006",
+        "#add_register_pointer": "1002300096",
+        "#sub_register_pointer": "1002300006",
+        "#conv_boolean_pointer": "1001300010",
+        "#conv_register_pointer": "1002300010",
+        "#conv_pointer_boolean": "1003100010",
+        "#conv_pointer_register": "1003200010",
+        "#mov": "1003300010",
+        "#add_pointer": "1003300096",
+        "#sub_pointer": "1003300006",
+        "#min_pointer": "1003300128",
+        "#max_pointer": "1003300224",
+
+        "#add_value_ip_else": "1030100096",
+        "#sub_value_ip_else": "1030100006",
+        "#add_value_divergent_ip": "1033100096",
+        "#sub_value_divergent_ip": "1033100006",
+        "#add_value_convergent_ip": "1330100096",
+        "#sub_value_convergent_ip": "1330100006",
+
+        "#reset_roots_pointer": "1003300015",
+
+        "#load": "1003200080",
+        "#store": "1002300160",
+        "#store_value": "1000300160",
+
+        "#allocate_value": "1020300015",
+        "#deallocate_value": "1020300000",
+        "#allocate_register": "1021300015",
+        "#deallocate_register": "1021300000",
+
+        "#restore": "1220300080",
+        "#save": "1220300160",
+
+        "#copy": "1223300160",
+
+        "#load_value_scalar": "2030300001",
+        "#load_scalar": "2333300001",
+        "#conv_boolean_scalar": "1031300010",
+        "#conv_register_scalar": "1032300010",
+        "#conv_pointer_scalar": "1033300010",
+        "#conv_scalar_boolean": "1303100010",
+        "#conv_scalar_register": "1303200010",
+        "#conv_scalar_pointer": "1303300010",
+        "#add_scalar": "1333300096",
+        "#sub_scalar": "1333300006",
+        "#mul_scalar": "1333300008",
+        "#div_scalar": "1333300013",
+        "#min_scalar": "1333300128",
+        "#max_scalar": "1333300224",
+        "#sin_scalar": "1333300256",
+        "#cos_scalar": "1333300512",
+        "#sqrt_scalar": "1333301024",
+        "#inverse_scalar": "1333300010",
+
+        "label": "1337148869",
+        "goto": "1337148870",
+
+        "#callback": "4003300000"
+    };
+    _vvm_extraface = {};
+    _vvm_decode = {
+"0": (function(m,r,ip){this.out += '_vvm_Cnop();\n';}),
+
+"1000100006": (function(m,r,ip){var c =(r[ip]+=3); this.out += '_vvm_Cxor_value('+m[c-2]+',_vvm_B('+m[c-1]+'));\n';}),
+"1000100008": (function(m,r,ip){var c =(r[ip]+=3); this.out += '_vvm_Cand_value('+m[c-2]+',_vvm_B('+m[c-1]+'));\n';}),
+"1000100013": (function(m,r,ip){var c =(r[ip]+=3); this.out += '_vvm_Cimp_value('+m[c-2]+',_vvm_B('+m[c-1]+'));\n';}),
+"1000100014": (function(m,r,ip){var c =(r[ip]+=3); this.out += '_vvm_Cor_value('+m[c-2]+',_vvm_B('+m[c-1]+'));\n';}),
+"1000100128": (function(m,r,ip){var c =(r[ip]+=3); this.out += '_vvm_Cland_value('+m[c-2]+',_vvm_B('+m[c-1]+'));\n';}),
+"1000100224": (function(m,r,ip){var c =(r[ip]+=3); this.out += '_vvm_Clor_value('+m[c-2]+',_vvm_B('+m[c-1]+'));\n';}),
+"1001100006": (function(m,r,ip){var c =(r[ip]+=3); this.out += '_vvm_Cxor_boolean(_vvm_B('+m[c-2]+'),_vvm_B('+m[c-1]+'));\n';}),
+"1001100008": (function(m,r,ip){var c =(r[ip]+=3); this.out += '_vvm_Cand_boolean(_vvm_B('+m[c-2]+'),_vvm_B('+m[c-1]+'));\n';}),
+"1001100013": (function(m,r,ip){var c =(r[ip]+=3); this.out += '_vvm_Cimp_boolean(_vvm_B('+m[c-2]+'),_vvm_B('+m[c-1]+'));\n';}),
+"1001100014": (function(m,r,ip){var c =(r[ip]+=3); this.out += '_vvm_Cor_boolean(_vvm_B('+m[c-2]+'),_vvm_B('+m[c-1]+'));\n';}),
+"1001100128": (function(m,r,ip){var c =(r[ip]+=3); this.out += '_vvm_Cland_boolean(_vvm_B('+m[c-2]+'),_vvm_B('+m[c-1]+'));\n';}),
+"1001100224": (function(m,r,ip){var c =(r[ip]+=3); this.out += '_vvm_Clor_boolean(_vvm_B('+m[c-2]+'),_vvm_B('+m[c-1]+'));\n';}),
+
+"2000200001": (function(m,r,ip){var c =(r[ip]+=3); this.out += '_vvm_Cload_value('+m[c-2]+',_vvm_R('+m[c-1]+'));\n';}),
+"1000200096": (function(m,r,ip){var c =(r[ip]+=3); this.out += '_vvm_Cadd_value('+m[c-2]+',_vvm_R('+m[c-1]+'));\n';}),
+"1000200006": (function(m,r,ip){var c =(r[ip]+=3); this.out += '_vvm_Csub_value('+m[c-2]+',_vvm_R('+m[c-1]+'));\n';}),
+"1000200008": (function(m,r,ip){var c =(r[ip]+=3); this.out += '_vvm_Cmul_value('+m[c-2]+',_vvm_R('+m[c-1]+'));\n';}),
+"1000200013": (function(m,r,ip){var c =(r[ip]+=3); this.out += '_vvm_Cdiv_value('+m[c-2]+',_vvm_R('+m[c-1]+'));\n';}),
+"1000200014": (function(m,r,ip){var c =(r[ip]+=3); this.out += '_vvm_Csign_value('+m[c-2]+',_vvm_R('+m[c-1]+'));\n';}),
+"1000200128": (function(m,r,ip){var c =(r[ip]+=3); this.out += '_vvm_Cmin_value('+m[c-2]+',_vvm_R('+m[c-1]+'));\n';}),
+"1000200224": (function(m,r,ip){var c =(r[ip]+=3); this.out += '_vvm_Cmax_value('+m[c-2]+',_vvm_R('+m[c-1]+'));\n';}),
+"1001200010": (function(m,r,ip){var c =(r[ip]+=3); this.out += '_vvm_Cconv_boolean_register(_vvm_B('+m[c-2]+'),_vvm_R('+m[c-1]+'));\n';}),
+"1002100010": (function(m,r,ip){var c =(r[ip]+=3); this.out += '_vvm_Cconv_register_boolean(_vvm_R('+m[c-2]+'),_vvm_B('+m[c-1]+'));\n';}),
+"1002200096": (function(m,r,ip){var c =(r[ip]+=3); this.out += '_vvm_Cadd_register(_vvm_R('+m[c-2]+'),_vvm_R('+m[c-1]+'));\n';}),
+"1002200006": (function(m,r,ip){var c =(r[ip]+=3); this.out += '_vvm_Csub_register(_vvm_R('+m[c-2]+'),_vvm_R('+m[c-1]+'));\n';}),
+"1002200008": (function(m,r,ip){var c =(r[ip]+=3); this.out += '_vvm_Cmul_register(_vvm_R('+m[c-2]+'),_vvm_R('+m[c-1]+'));\n';}),
+"1002200013": (function(m,r,ip){var c =(r[ip]+=3); this.out += '_vvm_Cdiv_register(_vvm_R('+m[c-2]+'),_vvm_R('+m[c-1]+'));\n';}),
+"1002200014": (function(m,r,ip){var c =(r[ip]+=3); this.out += '_vvm_Csign_register(_vvm_R('+m[c-2]+'),_vvm_R('+m[c-1]+'));\n';}),
+"1002200128": (function(m,r,ip){var c =(r[ip]+=3); this.out += '_vvm_Cmin_register(_vvm_R('+m[c-2]+'),_vvm_R('+m[c-1]+'));\n';}),
+"1002200224": (function(m,r,ip){var c =(r[ip]+=3); this.out += '_vvm_Cmax_register(_vvm_R('+m[c-2]+'),_vvm_R('+m[c-1]+'));\n';}),
+
+"1000300096": (function(m,r,ip){var c =(r[ip]+=3); this.out += '_vvm_Cadd_value_pointer('+m[c-2]+',_vvm_P('+m[c-1]+'));\n';}),
+"1000300006": (function(m,r,ip){var c =(r[ip]+=3); this.out += '_vvm_Csub_value_pointer('+m[c-2]+',_vvm_P('+m[c-1]+'));\n';}),
+"1002300096": (function(m,r,ip){var c =(r[ip]+=3); this.out += '_vvm_Cadd_register_pointer(_vvm_R('+m[c-2]+'),_vvm_P('+m[c-1]+'));\n';}),
+"1002300006": (function(m,r,ip){var c =(r[ip]+=3); this.out += '_vvm_Csub_register_pointer(_vvm_R('+m[c-2]+'),_vvm_P('+m[c-1]+'));\n';}),
+"1001300010": (function(m,r,ip){var c =(r[ip]+=3); this.out += '_vvm_Cconv_boolean_pointer(_vvm_B('+m[c-2]+'),_vvm_P('+m[c-1]+'));\n';}),
+"1002300010": (function(m,r,ip){var c =(r[ip]+=3); this.out += '_vvm_Cconv_register_pointer(_vvm_R('+m[c-2]+'),_vvm_P('+m[c-1]+'));\n';}),
+"1003100010": (function(m,r,ip){var c =(r[ip]+=3); this.out += '_vvm_Cconv_pointer_boolean(_vvm_P('+m[c-2]+'),_vvm_B('+m[c-1]+'));\n';}),
+"1003200010": (function(m,r,ip){var c =(r[ip]+=3); this.out += '_vvm_Cconv_pointer_register(_vvm_P('+m[c-2]+'),_vvm_R('+m[c-1]+'));\n';}),
+"1003300010": (function(m,r,ip){var c =(r[ip]+=3); this.out += '_vvm_Cmov(_vvm_P('+m[c-2]+'),_vvm_P('+m[c-1]+'));\n';}),
+"1003300096": (function(m,r,ip){var c =(r[ip]+=3); this.out += '_vvm_Cadd_pointer(_vvm_P('+m[c-2]+'),_vvm_P('+m[c-1]+'));\n';}),
+"1003300006": (function(m,r,ip){var c =(r[ip]+=3); this.out += '_vvm_Csub_pointer(_vvm_P('+m[c-2]+'),_vvm_P('+m[c-1]+'));\n';}),
+"1003300128": (function(m,r,ip){var c =(r[ip]+=3); this.out += '_vvm_Cmin_pointer(_vvm_P('+m[c-2]+'),_vvm_P('+m[c-1]+'));\n';}),
+"1003300224": (function(m,r,ip){var c =(r[ip]+=3); this.out += '_vvm_Cmax_pointer(_vvm_P('+m[c-2]+'),_vvm_P('+m[c-1]+'));\n';}),
+
+// "1030100096": (function(m,r,ip){var c =(r[ip]+=3); this.out += '_vvm_Cadd_value_ip_else('+m[c-2]+',_vvm_B('+m[c-1]+'));\n';}),
+// "1030100006": (function(m,r,ip){var c =(r[ip]+=3); this.out += '_vvm_Csub_value_ip_else('+m[c-2]+',_vvm_B('+m[c-1]+'));\n';}),
+// "1033100096": (function(m,r,ip){var c =(r[ip]+=3); this.out += '_vvm_Cadd_value_divergent_ip('+m[c-2]+',_vvm_R('+m[c-1]+'));\n';}),
+// "1033100006": (function(m,r,ip){var c =(r[ip]+=3); this.out += '_vvm_Csub_value_divergent_ip('+m[c-2]+',_vvm_R('+m[c-1]+'));\n';}),
+// "1330100096": (function(m,r,ip){var c =(r[ip]+=3); this.out += '_vvm_Cadd_value_convergent_ip('+m[c-2]+',_vvm_R('+m[c-1]+'));\n';}),
+// "1330100006": (function(m,r,ip){var c =(r[ip]+=3); this.out += '_vvm_Csub_value_convergent_ip('+m[c-2]+',_vvm_R('+m[c-1]+'));\n';}),
+
+"1003300015": (function(m,r,ip){var c =(r[ip]+=3); this.out += '_vvm_Creset_roots_pointer(_vvm_P('+m[c-2]+'),_vvm_P('+m[c-1]+'));\n';}),
+
+"1003200080": (function(m,r,ip){var c =(r[ip]+=3); this.out += '_vvm_Cload(_vvm_P('+m[c-2]+'),_vvm_R('+m[c-1]+'));\n';}),
+"1002300160": (function(m,r,ip){var c =(r[ip]+=3); this.out += '_vvm_Cstore(_vvm_R('+m[c-2]+'),_vvm_P('+m[c-1]+'));\n';}),
+"1000300160": (function(m,r,ip){var c =(r[ip]+=3); this.out += '_vvm_Cstore_value('+m[c-2]+',_vvm_P('+m[c-1]+'));\n';}),
+
+"1020300015": (function(m,r,ip){var c =(r[ip]+=3); this.out += '_vvm_Callocate_value('+m[c-2]+',_vvm_P('+m[c-1]+'));\n';}),
+"1020300000": (function(m,r,ip){var c =(r[ip]+=3); this.out += '_vvm_Cdeallocate_value('+m[c-2]+',_vvm_P('+m[c-1]+'));\n';}),
+"1021300015": (function(m,r,ip){var c =(r[ip]+=3); this.out += '_vvm_Callocate_register(_vvm_R('+m[c-2]+'),_vvm_P('+m[c-1]+'));\n';}),
+"1021300000": (function(m,r,ip){var c =(r[ip]+=3); this.out += '_vvm_Cdeallocate_register(_vvm_R('+m[c-2]+'),_vvm_P('+m[c-1]+'));\n';}),
+
+"1220300080": (function(m,r,ip){var c =(r[ip]+=3); this.out += '_vvm_Crestore('+m[c-2]+',_vvm_P('+m[c-1]+'));\n';}),
+"1220300160": (function(m,r,ip){var c =(r[ip]+=3); this.out += '_vvm_Csave('+m[c-2]+',_vvm_P('+m[c-1]+'));\n';}),
+
+"1223300160": (function(m,r,ip){var c =(r[ip]+=3); this.out += '_vvm_Ccopy(_vvm_P('+m[c-2]+'),_vvm_P('+m[c-1]+'));\n';}),
+
+"2030300001": (function(m,r,ip){var c =(r[ip]+=3); this.out += '_vvm_Cload_value('+m[c-2]+',_vvm_P('+m[c-1]+'));\n';}),
+"2333300001": (function(m,r,ip){var c =(r[ip]+=3); this.out += '_vvm_Cload_value(_vvm_R'+m[c-2]+'),_vvm_P('+m[c-1]+'));\n';}),
+"1031300010": (function(m,r,ip){var c =(r[ip]+=3); this.out += '_vvm_Cconv_boolean_scalar(_vvm_B('+m[c-2]+'),_vvm_P('+m[c-1]+'));\n';}),
+"1032300010": (function(m,r,ip){var c =(r[ip]+=3); this.out += '_vvm_Cconv_register_scalar(_vvm_R('+m[c-2]+'),_vvm_P('+m[c-1]+'));\n';}),
+"1033300010": (function(m,r,ip){var c =(r[ip]+=3); this.out += '_vvm_Cconv_pointer_scalar(_vvm_P('+m[c-2]+'),_vvm_P('+m[c-1]+'));\n';}),
+"1303100010": (function(m,r,ip){var c =(r[ip]+=3); this.out += '_vvm_Cconv_scalar_boolean(_vvm_P('+m[c-2]+'),_vvm_B('+m[c-1]+'));\n';}),
+"1303200010": (function(m,r,ip){var c =(r[ip]+=3); this.out += '_vvm_Cconv_scalar_register(_vvm_P('+m[c-2]+'),_vvm_R('+m[c-1]+'));\n';}),
+"1303300010": (function(m,r,ip){var c =(r[ip]+=3); this.out += '_vvm_Cconv_scalar_pointer(_vvm_P('+m[c-2]+'),_vvm_P('+m[c-1]+'));\n';}),
+"1333300096": (function(m,r,ip){var c =(r[ip]+=3); this.out += '_vvm_Cadd_scalar(_vvm_P('+m[c-2]+'),_vvm_P('+m[c-1]+'));\n';}),
+"1333300006": (function(m,r,ip){var c =(r[ip]+=3); this.out += '_vvm_Csub_scalar(_vvm_P('+m[c-2]+'),_vvm_P('+m[c-1]+'));\n';}),
+"1333300008": (function(m,r,ip){var c =(r[ip]+=3); this.out += '_vvm_Cmul_scalar(_vvm_P('+m[c-2]+'),_vvm_P('+m[c-1]+'));\n';}),
+"1333300013": (function(m,r,ip){var c =(r[ip]+=3); this.out += '_vvm_Cdiv_scalar(_vvm_P('+m[c-2]+'),_vvm_P('+m[c-1]+'));\n';}),
+"1333300128": (function(m,r,ip){var c =(r[ip]+=3); this.out += '_vvm_Cmin_scalar(_vvm_P('+m[c-2]+'),_vvm_P('+m[c-1]+'));\n';}),
+"1333300224": (function(m,r,ip){var c =(r[ip]+=3); this.out += '_vvm_Cmax_scalar(_vvm_P('+m[c-2]+'),_vvm_P('+m[c-1]+'));\n';}),
+"1333300256": (function(m,r,ip){var c =(r[ip]+=3); this.out += '_vvm_Csin_scalar(_vvm_P('+m[c-2]+'),_vvm_P('+m[c-1]+'));\n';}),
+"1333300512": (function(m,r,ip){var c =(r[ip]+=3); this.out += '_vvm_Ccos_scalar(_vvm_P('+m[c-2]+'),_vvm_P('+m[c-1]+'));\n';}),
+"1333301024": (function(m,r,ip){var c =(r[ip]+=3); this.out += '_vvm_Csqrt_scalar(_vvm_P('+m[c-2]+'),_vvm_P('+m[c-1]+'));\n';}),
+"1333300010": (function(m,r,ip){var c =(r[ip]+=3); this.out += '_vvm_Cinverse_scalar(_vvm_P('+m[c-2]+'),_vvm_P('+m[c-1]+'));\n';}),
+
+"1337148869": (function(m,r,ip){var c =(r[ip]+=3); this.out += '_vvm_Clabel(_vvm_Label('+m[c-2]+'),_vvm_Label_P('+c+'));\n';}),
+"1337148870": (function(m,r,ip){var c =(r[ip]+=3); this.out += '_vvm_Cgoto(_vvm_Goto_Label('+m[c-2]+'));\n';}),
+
+"4003300000": (function(m,r,ip){var c =(r[ip]+=3); this.out += '_vvm_Ccallback(_vvm_P('+m[c-2]+'),_vvm_P('+m[c-1]+'));\n';})
+};
+    function _vvm_decoder() {
+        for (var i in _vvm_interface) _vvm_extraface[_vvm_interface[i]] = i;
+    }
+    function _vvm_decompile(operations,memory,registers,ip,count) {
+        var i = 0;
+        while (i++ < count) {
+            var o = memory[registers[ip]];
+            if (operations[o] !== undefined) operations[o].call(this,memory,registers,ip);
+        }
+    }
+
+    _vvm_preparator();
+    _vvm_generator();
+    _vvm_decoder();
+
+    _vvm_decompile(_vvm_decode,[
+    1001100006,1,1, 1001100006,2,2, 2000200001,1019462460,3, 
+    1001100008,1,3, 1001100008,2,3, 2000200001,16776960,4,
+    1001100008,2,4, 1001100006,3,4, 2000200001,252702960,3,
+    1001100008,1,3, 1001100006,4,3, 1000100006,4294901760,3,
+    2000200001,99,6, 1000100008,0,5, 1000100014,1,5,
+    1003300010,5,7, 1002100010,7,4, 1030100096,21,4,
+    1001100008,3,4, 1001100008,7,4, 1001100128,5,4,
+    1002300160,4,6, 1000200096,1,6, 1002200096,7,7,
+    1000300006,27,0, 1001100014,2,7, 1001100013,1,7,
+    1001100224,5,7, 1002300160,7,6, 4003300000,0,0,
+    1001100006,2,1, 1000100006,4294967295,2, 1000300006,93,0],[0],0,33);
+    var t = this.out;
+
+    log("decompilation:");
+    log(t);
+    this.out = '';
+    
+    log("compilation:");
+    _vvm_compile(t);
+    log(this.out);
+    </script>
+
+
+</body></html>
